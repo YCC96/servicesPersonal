@@ -1,4 +1,4 @@
-package com.service.personal.servicesPersonal.model.customer;
+package com.service.personal.servicesPersonal.model.customer.request;
 
 public class CustomerRequest {
 
@@ -86,7 +86,7 @@ public class CustomerRequest {
 
     @Override
     public String toString() {
-        return "StudentRequest{" +
+        return "CustomerRequest{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", firstSurname='" + firstSurname + '\'' +
