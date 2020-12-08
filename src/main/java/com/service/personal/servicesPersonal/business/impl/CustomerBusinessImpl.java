@@ -13,6 +13,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomerBusinessImpl implements CustomerBusiness {
 
+    static final String TEXT1 =  "No se encontro usuario";
+
+    static final String TEXT2 =  "Se encontro usuario";
+
     @Autowired
     private CustomerService customerService;
 
@@ -31,7 +35,7 @@ public class CustomerBusinessImpl implements CustomerBusiness {
         CustomerResponse customerResponse = new CustomerResponse();
         CustomerResponse cust = this.findByIdCustomer(id);
         if (cust.getId().equals("1")) {
-            customerResponse.setMessage("No se encontro usuario");
+            customerResponse.setMessage(TEXT1);
         } else {
             customerResponse = customerService.update(id, customerRequest);
         }
@@ -43,7 +47,7 @@ public class CustomerBusinessImpl implements CustomerBusiness {
         CustomerResponse customerResponse = new CustomerResponse();
         CustomerResponse cust = this.findByIdCustomer(id);
         if (cust.getId().equals("1")) {
-            customerResponse.setMessage("No se encontro usuario");
+            customerResponse.setMessage(TEXT1);
         } else {
             customerResponse = customerService.delete(id);
         }
@@ -56,10 +60,10 @@ public class CustomerBusinessImpl implements CustomerBusiness {
         CustomerRequest cust = customerService.findById(id);
         if (cust.getId() == null) {
             customerResponse.setId("1");
-            customerResponse.setMessage("No se encontro usuario");
+            customerResponse.setMessage(TEXT1);
         } else {
             customerResponse.setId("0");
-            customerResponse.setMessage("Se encontro usuario");
+            customerResponse.setMessage(TEXT2);
             customerResponse.setCustomerRequest(cust);
         }
         return customerResponse;

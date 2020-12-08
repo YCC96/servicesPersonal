@@ -17,7 +17,6 @@ public class CustomerServiceImpl implements CustomerService {
     Integer cont = 1;
     
     CustomerServiceImpl(){
-        System.out.println("constructor");
         CustomerRequest customerRequest = new CustomerRequest();
         customerRequest.setId("1");
         customerRequest.setName("Yori");

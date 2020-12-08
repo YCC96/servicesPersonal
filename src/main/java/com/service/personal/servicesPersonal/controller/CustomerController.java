@@ -2,8 +2,6 @@ package com.service.personal.servicesPersonal.controller;
 
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 import com.service.personal.servicesPersonal.business.CustomerBusiness;
 import com.service.personal.servicesPersonal.model.customer.request.CustomerRequest;
 import com.service.personal.servicesPersonal.model.dto.ResponseServicesPersonalApi;
@@ -23,12 +21,6 @@ public class CustomerController {
 
     @Autowired
     private CustomerBusiness customerBusiness;
-
-    @GetMapping("/hi")
-    @ResponseBody
-    public String getHi() {
-    	return "Hello World 3!";
-    }
 
     @GetMapping("/all")
     @ResponseBody
